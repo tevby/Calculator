@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./calculator-app-main/images/favicon-32x32.png" type="image/x-icon">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="header">
+                <p class="title">calc</p>
+                <div class="theme">
+                    <p class="theme-title">THEME</p>
+                    <div class="toogle-container">
+                        <div class="toogle-label">
+                            <span>1</span>
+                            <span>2</span>
+                        </div>
+                        <label class="toogle">
+                            <input type="checkbox" id="toogle-checkbox" class="toogle-checkbox">
+                            <span class="toogle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="output-screen">
+                <input type="text" class="output"  id="output" placeholder="0">
+            </div>
+            <div class="keys-container">
+                <div class="row1">
+                    <button class="btn7" onclick="output.value += '7'">7</button>
+                    <button class="btn8" onclick="output.value += '8'">8</button>
+                    <button class="btn9" onclick="output.value += '9'">9</button>
+                    <button class="btn-del" onclick="output.value = output.value.substr(0, output.value.length -1)">DEL</button>
+                </div>
+                <div class="row2">
+                    <button class="btn4" onclick="output.value += '4'">4</button>
+                    <button class="btn5" onclick="output.value += '5'">5</button>
+                    <button class="btn6" onclick="output.value += '6'">6</button>
+                    <button class="btn-add" onclick="output.value += '+'">+</button>
+                </div>
+                <div class="row3">
+                    <button class="btn1" onclick="output.value += '1'">1</button>
+                    <button class="btn2"onclick="output.value += '2'">2</button>
+                    <button class="btn3" onclick="output.value += '3'">3</button>
+                    <button class="btn-sub"onclick="output.value += '-'">-</button>
+                </div>
+                <div class="row4">
+                    <button class="btn-dot" onclick="output.value += '.'">.</button>
+                    <button class="btn0" onclick="output.value += '0'">0</button>
+                    <button class="btn-div" onclick="output.value += '/'">/</button>
+                    <button class="btn-mul" onclick="output.value += '*'">x</button>
+                </div>
+                <div class="row5">
+                    <button class="reset" onclick="output.value = ' '">RESET</button>
+                    <button class="btn-enter" onclick="output.value = eval(output.value)">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

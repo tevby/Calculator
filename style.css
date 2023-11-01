@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:root,
+.darkmode{
+    --backgroundcolor:hsl(222, 26%, 31%);
+    --tooglebackgroundcolor:hsl(223, 31%, 20%);
+    --screenbackgroundcolor:hsl(224, 36%, 15%);
+    --keybackground:hsl(225, 21%, 49%);
+    --keyshadow: hsl(224, 28%, 35%);
+    --tooglekey:hsl(6, 63%, 50%);
+    --tooglekeyshadow: hsl(6, 70%, 34%);
+    --keybackground2:hsl(30, 25%, 89%);
+    --keyshadow2:hsl(28, 16%, 65%);
+    --fontcolor1:hsl(221, 14%, 31%);
+    --headerfont:hsl(0, 0%, 100%);
+    --fontcolor2:hsl(0, 0%, 100%);
+}
+.lightmode{
+    --backgroundcolor:hsl(0, 0%, 90%);
+    --tooglebackgroundcolor: hsl(0, 5%, 81%);
+    --screenbackgroundcolor:hsl(0, 0%, 93%);
+    --keybackground: hsl(185, 42%, 37%);
+    --keyshadow:hsl(185, 58%, 25%);
+    --tooglekey:hsl(25, 98%, 40%);
+    --tooglekeyshadow: hsl(25, 99%, 27%);
+    --keybackground2:hsl(45, 7%, 89%);
+    --keyshadow2:hsl(35, 11%, 61%);
+    --fontcolor1:hsl(60, 10%, 19%);
+    --headerfont:hsl(60, 10%, 19%);
+    --fontcolor2:hsl(0, 0%, 100%);
+}
+.coloredmode{
+    --backgroundcolor:hsl(268, 75%, 9%);
+    --tooglebackgroundcolor:hsl(268, 71%, 12%);
+    --screenbackgroundcolor:hsl(268, 71%, 12%) ;
+    --keybackground:hsl(281, 89%, 26%);
+    --keyshadow:hsl(285, 91%, 52%) ;
+    --tooglekey:hsl(176, 100%, 44%);
+    --tooglekeyshadow:hsl(177, 92%, 70%) ;
+    --keybackground2:hsl(268, 47%, 21%);
+    --keyshadow2:hsl(290, 70%, 36%);
+    --fontcolor1:hsl(52, 100%, 62%);
+    --fontcolor2:hsl(0, 0%, 100%);
+}
+body{
+    height: 100vh;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: var(--backgroundcolor);
+}
+.container{
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--backgroundcolor);
+    display: grid;
+    grid-template-rows: 3rem 5rem 1fr;
+    gap: 1rem;
+}
+.header{
+    padding: 0.5rem 0 0.5rem 0;
+    display: flex;
+    font-size: 0.8rem;
+    color: var(--headerfont);
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.theme{
+    width: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+.toogle-container{
+    display: flex;
+    flex-direction: column;
+}
+span{
+    margin-left: 0.35rem;
+}
+.toogle-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+span{
+    margin-left: 0.5rem;
+}
+.toogle{
+    position: relative;
+    width: 70%;
+    height: 1rem;
+    background-color: var(--tooglebackgroundcolor);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+.toogle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.toogle-slider{
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--tooglekey);
+}
+.toogle-slider::before{
+    position: absolute;
+    content: "";
+    top: 0.1rem;
+    height: 0.8rem;
+    width: 1em;
+    background-color: var(--tooglekey);
+    border-radius:50% ;
+    transition: .3s;
+}
+.toogle input:focus + .toogle-slider {
+    box-shadow: var(--tooglekeyshadow);
+}
+.toogle input:checked + .toogle-slider{
+    transform: translateX(0.7rem);
+}
+.output-screen{
+    background-color: var(--screenbackgroundcolor);
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+    padding: 1rem;
+}
+.output-screen input{
+    width: 100%;
+    height: 100%;
+    background-color: var(--screenbackgroundcolor);
+    border: none;
+    color: var(--headerfont);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+}
+::placeholder{
+    color: var(--fontcolor2);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+}
+.keys-container{
+    background-color: var(--tooglebackgroundcolor);
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.row1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    border: none;
+}
+button{
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+.row2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    border: none;
+}
+.row3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    border: none;
+}
+.row4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    border: none;
+}
+.row5{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    border: none;
+}
+.btn1, .btn2, .btn3, .btn4, .btn5, .btn6, .btn7, .btn8, .btn9, .btn0, .btn-dot, .btn-add, .btn-sub, .btn-mul, .btn-div{
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--fontcolor1);
+    background-color: var(--keybackground2);
+    box-shadow: 0 0.25rem var(--keyshadow2);
+}
+.btn-del, .reset{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--headerfont);
+    background-color: var(--backgroundcolor);
+    box-shadow: 0 0.25rem var(--keyshadow);
+}
+.btn-enter{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--fontcolor2);
+    background-color: var(--tooglekey);
+    box-shadow: 0 0.25rem var(--tooglekeyshadow);
+}
+
+@media only screen and (min-width:660px){
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 50%;
+        height: 70%;
+    }
+}
+@media only screen and (min-width:990px){
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        max-width: 30%;
+        min-height: 75%;
+        display: grid;
+        grid-template-rows: 3rem 5rem 1fr ;
+        gap: 0.5rem;
+    }
+}
